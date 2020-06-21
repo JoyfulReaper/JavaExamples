@@ -8,7 +8,7 @@ public class FileIO {
     public static void main(String[] args) throws IOException
     {   
         String dir = System.getProperty("user.dir");
-        PrintWriter out = new PrintWriter("testFile.txt");
+        PrintWriter out = new PrintWriter("testFile.txt", StandardCharsets.UTF_8);
         Scanner sysIn = new Scanner(System.in);
 
         System.out.println("You are in " + dir);
