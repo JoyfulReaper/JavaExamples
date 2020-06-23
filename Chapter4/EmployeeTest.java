@@ -13,5 +13,8 @@ public class EmployeeTest {
             System.out.printf("Name: %s Salary: %.2f Hire date: %s ID: %d\n", 
                 employee.getName(), employee.getSalary(), employee.getHireDate(), employee.getID());
         }
+
+        System.out.println();
+        System.out.println("Next ID: " + Employee.getNextID());
     }
 }
