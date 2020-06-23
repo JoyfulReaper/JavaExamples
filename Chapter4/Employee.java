@@ -6,6 +6,8 @@ public class Employee {
     private final String name;
     private BigDecimal salary;
     private final LocalDate hireDate;
+    private int id;
+    private static int nextID = 1;
 
     public Employee(final String name, final double salary, final int year, final int month, final int day) {
         this(name, new BigDecimal(salary), year, month, day);
@@ -15,10 +17,11 @@ public class Employee {
         Objects.requireNonNull(name, "name cannot be null");
         Objects.requireNonNull(salary, "salary cannot be null");
         //Object.requireNonNullElse(name, "DefaultName");
-        
+
         this.name = name;
         this.salary = salary;
         this.hireDate = LocalDate.of(year, month, day);
+        this.id = nextID++;
     }
 
     public String getName() {
@@ -31,6 +34,10 @@ public class Employee {
 
     public LocalDate getHireDate() {
         return hireDate;
+    }
+
+    public int getID() {
+        return id;
     }
 
     public void raiseSalary(final double byPercent) {
